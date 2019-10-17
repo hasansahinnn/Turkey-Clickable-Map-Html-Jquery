@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" id="css-turkey">
+
+<!-- Mirrored from gencleriniyilikagaci.gsb.gov.tr/galeri/harita.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Oct 2019 09:51:35 GMT -->
+<head>
+ <meta charset="utf-8" />
+<!--
+
+
+
+
+ *** DON'T COPY ANYTHING FROM THE SOURCE CODE OF THIS DEMO PAGE ! ***
+
+
+ * CSSMap plugin - Turkey
+ * version: 4.4
+ * web: http://cssmapsplugin.com/asia/turkey.html
+ * email: support@cssmapsplugin.com
+ * author: Łukasz Popardowski { Winston_Wolf }
+ * license: http://cssmapsplugin.com/license
+
+
+
+
+-->
+
+
+   <link rel="stylesheet" media="screen,projection" href="harita/cssmap-turkey.css" />
+    <script type="text/javascript" src="harita/jquery.min.js"></script>
+    <script src="harita/jquery.cssmap.js"></script>
+    <script>
+    $(function($) {
+      // THIS IS NOT A PART OF THE MAP'S SCRIPT! Don't put it on your site!
+      var msA=$('#maps-switcher').find('a'),scroll_timer,displayed=false,$message=$('#top-link'),$window=$(window),top=$(document.body).children(0).position().top;
+	  $('.in-nav').click(function(){var elementClicked=$(this).attr("href"),destination=$(elementClicked).offset().top;
+	  $("html:not(:animated),body:not(:animated)").animate({scrollTop:destination-20},1500);
+	  return false;});
+	  $window.scroll(function(){window.clearTimeout(scroll_timer);
+	  scroll_timer=window.setTimeout(function(){if($window.scrollTop()<=top){displayed=false;$message.fadeOut();
+	  }else if(displayed==false){displayed=true;
+	  $message.stop(true,true).fadeIn().click(function(){
+	  $("html:not(:animated),body:not(:animated)").animate({scrollTop:0},1500);
+	  $message.fadeOut('slow');
+	  return false;
+	  });
+	  }},300);
+	  });
+	  $('.sample').addClass('hidden');
+	  $('#example1').addClass('active');
+	  $(msA).click(function(){var lH=$(this).attr('href'),mH=$(lH).outerHeight();
+	  $('#maps-switcher').find('a').removeClass('active');
+	  $('.sample').removeClass('active').addClass('hidden');
+	  $(lH).removeClass('hidden').addClass('active');
+	  $(this).addClass('active');return false;
+	  });
+      $("#map-turkey").cssMap({size:960,tooltips:"floating",tooltips:true,cities:true,onClick:function(e){
+		var a=e.children('a'),
+		link=a.attr('href'),
+		text=a.text(),
+		className=e.attr('class').split(' ')[0];
+		$('#clickmessage1').text('=> '+link+'; ');
+		$('#clickmessage2').text('=> '+text+'; ');
+		$('#clickmessage3').text('=> '+className+'; ');
+	  
+		parent.galeriAc(link);
+	  } 
+	  });
+      $("#map-turkey2").cssMap({size:810,tooltips:false,cities:true});
+      $("#map-turkey3").cssMap({size:660,multipleClick:true,clicksLimit:3,searchLink:'Ara'});
+      $("#map-turkey4").cssMap({size:500,tooltips:"floating-bottom-right",visibleList:true,cities:true});
+      $("#map-turkey5").cssMap({size:660,onClick:function(e){
+	  var a=e.children('a'),
+	  link=a.attr('href'),
+	  text=a.text(),
+	  className=e.attr('class').split(' ')[0];
+	  $('#clickmessage1').text('=> '+link+'; ');
+	  $('#clickmessage2').text('=> '+text+'; ');
+	  $('#clickmessage3').text('=> '+className+'; ');
+	  } 
+	  });
+    });
+
+
+    </script>
+	
+	
+	
+	
+		<!-- FANCYBOX -->
+
+	<script type="text/javascript" src="harita/fancybox/jquery.fancybox8cbb.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="harita/fancybox/jquery.fancybox8cbb.css?v=2.1.5" media="screen" />
+	<link rel="stylesheet" type="text/css" href="harita/fancybox/helpers/jquery.fancybox-buttons3447.css?v=1.0.5" />
+	<script type="text/javascript" src="js/fancybox/helpers/jquery.fancybox-buttons3447.js?v=1.0.5"></script>
+	<link rel="stylesheet" type="text/css" href="harita/fancybox/helpers/jquery.fancybox-thumbsf2ad.css?v=1.0.7" />
+	<script type="text/javascript" src="harita/fancybox/helpers/jquery.fancybox-thumbsf2ad.js?v=1.0.7"></script>
+	<script type="text/javascript" src="harita/fancybox/helpers/jquery.fancybox-mediac924.js?v=1.0.6"></script>
+	<script type="text/javascript">
+			$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox();
+
+			/*
+			 *  Different effects
+			 */
+			 
+			 
+			 $(".fancybox-harita").fancybox({
+  fitToView: true,
+  afterLoad: function(){
+   this.width = $(this.element).data("width");
+   this.height = $(this.element).data("height");
+  },
+  autoscale:true
+ });
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.html');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+
+	
+ <title>Turkey, CSS &amp; jQuery clickable map by Winston_Wolf</title>
+</head>
+<body>
+
+
+
+
+  <div id="example1" class="sample active" style="overflow-y: auto;">
+   <div id="map-turkey"><ul class="turkey">  <li class="tr1"><a href="#adana">Adana</a></li>  <li class="tr2"><a href="#adiyaman">Adıyaman</a></li>  <li class="tr3"><a href="#afyonkarahisar">Afyonkarahisar</a></li>  <li class="tr4"><a href="#agri">Ağrı</a></li>  <li class="tr5"><a href="#aksaray">Aksaray</a></li>  <li class="tr6"><a href="#amasya">Amasya</a></li>  <li class="tr7"><a href="#ankara">Ankara</a></li>  <li class="tr8"><a href="#antalya">Antalya</a></li>  <li class="tr9"><a href="#ardahan">Ardahan</a></li>  <li class="tr10"><a href="#artvin">Artvin</a></li>  <li class="tr11"><a href="#aydin">Aydın</a></li>  <li class="tr12"><a href="#balikesir">Balıkesir</a></li>  <li class="tr13"><a href="#bartin">Bartın</a></li>  <li class="tr14"><a href="#batman">Batman</a></li>  <li class="tr15"><a href="#bayburt">Bayburt</a></li>  <li class="tr16"><a href="#bilecik">Bilecik</a></li>  <li class="tr17"><a href="#bingol">Bingöl</a></li>  <li class="tr18"><a href="#bitlis">Bitlis</a></li>  <li class="tr19"><a href="#bolu">Bolu</a></li>  <li class="tr20"><a href="#burdur">Burdur</a></li>  <li class="tr21"><a href="#bursa">Bursa</a></li>  <li class="tr22"><a href="#canakkale">Çanakkale</a></li>  <li class="tr23"><a href="#cankiri">Çankırı</a></li>  <li class="tr24"><a href="#corum">Çorum</a></li>  <li class="tr25"><a href="#denizli">Denizli</a></li>  <li class="tr26"><a href="#diyarbakir">Diyarbakır</a></li>  <li class="tr27"><a href="#duzce">Düzce</a></li>  <li class="tr28"><a href="#edirne">Edirne</a></li>  <li class="tr29"><a href="#elazig">Elâzığ</a></li>  <li class="tr30"><a href="#erzincan">Erzincan</a></li>  <li class="tr31"><a href="#erzurum">Erzurum</a></li>  <li class="tr32"><a href="#eskisehir">Eskişehir</a></li>  <li class="tr33"><a href="#gaziantep">Gaziantep</a></li>  <li class="tr34"><a href="#giresun">Giresun</a></li>  <li class="tr35"><a href="#gumushane">Gümüşhane</a></li>  <li class="tr36"><a href="#hakkari">Hakkâri</a></li>  <li class="tr37"><a href="#hatay">Hatay</a></li>  <li class="tr38"><a href="#igdir">Iğdır</a></li>  <li class="tr39"><a href="#isparta">Isparta</a></li>  <li class="tr40"><a href="#istanbul">İstanbul</a></li>  <li class="tr41"><a href="#izmir">İzmir</a></li>  <li class="tr42"><a href="#kahramanmaras">Kahramanmaraş</a></li>  <li class="tr43"><a href="#karabuk">Karabük</a></li>  <li class="tr44"><a href="#karaman">Karaman</a></li>  <li class="tr45"><a href="#kars">Kars</a></li>  <li class="tr46"><a href="#kastamonu">Kastamonu</a></li>  <li class="tr47"><a href="#kayseri">Kayseri</a></li>  <li class="tr48"><a href="#kilis">Kilis</a></li>  <li class="tr49"><a href="#kirikkale">Kırıkkale</a></li>  <li class="tr50"><a href="#kirklareli">Kırklareli</a></li>  <li class="tr51"><a href="#kirsehir">Kırşehir</a></li>  <li class="tr52"><a href="#kocaeli">Kocaeli</a></li>  <li class="tr53"><a href="#konya">Konya</a></li>  <li class="tr54"><a href="#kutahya">Kütahya</a></li>  <li class="tr55"><a href="#malatya">Malatya</a></li>  <li class="tr56"><a href="#manisa">Manisa</a></li>  <li class="tr57"><a href="#mardin">Mardin</a></li>  <li class="tr58"><a href="#mersin">Mersin</a></li>  <li class="tr59"><a href="#mugla">Muğla</a></li>  <li class="tr60"><a href="#mus">Muş</a></li>  <li class="tr61"><a href="#nevsehir">Nevşehir</a></li>  <li class="tr62"><a href="#nigde">Niğde</a></li>  <li class="tr63"><a href="#ordu">Ordu</a></li>  <li class="tr64"><a href="#osmaniye">Osmaniye</a></li>  <li class="tr65"><a href="#rize">Rize</a></li>  <li class="tr66"><a href="#sakarya">Sakarya</a></li>  <li class="tr67"><a href="#samsun">Samsun</a></li>  <li class="tr68"><a href="#sanliurfa">Şanlıurfa</a></li>  <li class="tr69"><a href="#siirt">Siirt</a></li>  <li class="tr70"><a href="#sinop">Sinop</a></li>  <li class="tr71"><a href="#sivas">Sivas</a></li>  <li class="tr72"><a href="#sirnak">Şırnak</a></li>  <li class="tr73"><a href="#tekirdag">Tekirdağ</a></li>  <li class="tr74"><a href="#tokat">Tokat</a></li>  <li class="tr75"><a href="#trabzon">Trabzon</a></li>  <li class="tr76"><a href="#tunceli">Tunceli</a></li>  <li class="tr77"><a href="#usak">Uşak</a></li>  <li class="tr78"><a href="#van">Van</a></li>  <li class="tr79"><a href="#yalova">Yalova</a></li>  <li class="tr80"><a href="#yozgat">Yozgat</a></li>  <li class="tr81"><a href="#zonguldak">Zonguldak</a></li> </ul></div>
+  </div>
+
+
+</body>
+
+<!-- Mirrored from gencleriniyilikagaci.gsb.gov.tr/galeri/harita.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Oct 2019 09:51:46 GMT -->
+</html>
